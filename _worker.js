@@ -1,4 +1,4 @@
-﻿import { connect } from "cloudflare:sockets";
+import { connect } from "cloudflare:sockets";
 let config_JSON, 反代IP = '', 启用SOCKS5反代 = null, 启用SOCKS5全局反代 = false, 我的SOCKS5账号 = '', parsedSocks5Address = {};
 let SOCKS5白名单 = ['*tapecontent.net', '*cloudatacdn.com', '*loadshare.org', '*cdn-centaurus.com', 'scholar.google.com'];
 const Pages静态页面 = 'https://edt-pages.github.io';
@@ -719,7 +719,7 @@ function handleConnection(ws, request, FIXED_UUID) {
         while (dataBuffer.length) pool.free(dataBuffer.shift());
         dataBufferBytes = 0;
         stats = { total: 0, count: 0, bigChunks: 0, window: 0, timestamp: Date.now() };
-        mode = 'direct';
+        mode = 'adaptive';
         avgSize = 0;
         throughputs = [];
         pool.reset();
