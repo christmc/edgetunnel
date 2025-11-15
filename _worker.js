@@ -719,7 +719,7 @@ function handleConnection(ws, request, FIXED_UUID) {
         while (dataBuffer.length) pool.free(dataBuffer.shift());
         dataBufferBytes = 0;
         stats = { total: 0, count: 0, bigChunks: 0, window: 0, timestamp: Date.now() };
-        mode = 'adaptive';
+        mode = 'direct';
         avgSize = 0;
         throughputs = [];
         pool.reset();
